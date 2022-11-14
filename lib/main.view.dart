@@ -78,11 +78,11 @@ class _PandaBarState extends State<PandaBar> {
                     selectedColor: widget.buttonSelectedColor,
                     onTap: () {
                       if (data.disabled ?? false) {
-                        return;
+                      } else {
+                        setState(() {
+                          selectedId = data.id;
+                        });
                       }
-                      setState(() {
-                        selectedId = data.id;
-                      });
                       this.widget.onChange(data.id);
                     },
                   );
