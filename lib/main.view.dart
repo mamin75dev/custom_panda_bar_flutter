@@ -6,7 +6,6 @@ import 'package:pandabar/pandabar.dart';
 class PandaBar extends StatefulWidget {
   final Color? backgroundColor;
   final List<PandaBarButtonData> buttonData;
-  final bool? disabled;
   final Widget? fabIcon;
 
   final Color? buttonColor;
@@ -26,7 +25,6 @@ class PandaBar extends StatefulWidget {
     this.onFabButtonPressed,
     this.buttonColor,
     this.buttonSelectedColor,
-    this.disabled,
   }) : super(key: key);
 
   @override
@@ -79,7 +77,7 @@ class _PandaBarState extends State<PandaBar> {
                     unselectedColor: widget.buttonColor,
                     selectedColor: widget.buttonSelectedColor,
                     onTap: () {
-                      if (widget.disabled ?? false) {
+                      if (data.disabled ?? false) {
                         return;
                       }
                       setState(() {
